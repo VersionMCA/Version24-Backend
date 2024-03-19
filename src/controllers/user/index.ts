@@ -210,8 +210,7 @@ export async function handleUserLogin(
       });
     }
 
-    const expiresTimeInMs =
-      Number(process.env.JWT_EXPIRES_IN) * 60 * 60 * 24 * 1000;
+    const expiresTimeInMs = Number(process.env.JWT_EXPIRES_IN);
 
     const JWTtoken = jwt.sign({ email }, process.env.SECRET_KEY as string, {
       expiresIn: expiresTimeInMs,

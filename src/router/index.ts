@@ -29,7 +29,12 @@ apirouter.get("/test", (req, res) => {
 });
 apirouter.post("/login", handleUserLogin);
 apirouter.get("/logout", (req, res) => {
-  res.clearCookie("jwt");
+  res.cookie("jwt", "", {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    maxAge: 0,
+    domain: ".version24.in",
+  });
   res.status(200).json({ status: "success" });
 });
 

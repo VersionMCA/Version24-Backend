@@ -75,7 +75,7 @@ export default class Email {
     this.to = emailToSend;
     this.firstName = user.name.split(" ")[0];
     this.url = url;
-    this.from = '"Version24" <noreply@innovac23.tech>';
+    this.from = "Version";
     this.transporter = this.newTransport();
   }
 

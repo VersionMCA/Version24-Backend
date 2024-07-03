@@ -20,7 +20,12 @@ const corsOptions = {
   },
 };
 
-app.use(cors(corsOptions));
+app.use(
+  cors({
+    origin: process.env.CORS_ORIGIN,
+    credentials: true,
+  })
+);
 
 app.use((req, res, next) => {
   res.header("Content-Security-Policy", "default-src 'self'");

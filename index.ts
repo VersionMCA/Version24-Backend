@@ -6,7 +6,7 @@ import { sanitizeInput } from "./src/utils/utils";
 
 const app = express();
 
-const allowedDomain = "version24.in";
+const allowedDomain = "anujsharma.me";
 
 const corsOptions = {
   origin: function (origin: any, callback: any) {

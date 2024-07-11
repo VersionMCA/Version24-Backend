@@ -75,13 +75,15 @@ export default class Email {
     this.to = emailToSend;
     this.firstName = user.name.split(" ")[0];
     this.url = url;
-    this.from = "Version";
+    this.from = "Version<mailtoanuj21@gmaii.com>";
     this.transporter = this.newTransport();
   }
 
   private newTransport(): Transporter {
     return nodemailer.createTransport({
       host: process.env.NODEMAILER_HOST,
+      port: Number(process.env.NODEMAILER_PORT),
+      secure: true,
       auth: {
         user: process.env.NODEMAILER_USER,
         pass: process.env.NODEMAILER_PASS,
